@@ -1,5 +1,7 @@
 mod count_words;
 mod data_science;
+mod open_gl;
+mod memory_alignment;
 
 use std::mem;
 use ferris_says::say;
@@ -146,6 +148,8 @@ fn main() {
     println!("Hello, world!");
     // data_science::test_array();
     // data_science::test_ndarray_rand();
-    data_science::test_visualize();
+    // data_science::test_visualize();
+    // open_gl::build_window();
+    memory_alignment::test_memory();
 }
 
