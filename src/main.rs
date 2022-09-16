@@ -1,7 +1,11 @@
+mod count_words;
+mod data_science;
+
 use std::mem;
 use ferris_says::say;
 use walkdir::WalkDir;
 use std::io::{stdout, BufWriter};
+use std::slice::Iter;
 use rayon::prelude::*;
 
 
@@ -94,8 +98,7 @@ impl Animal for Sheep {
     }
 }
 
-fn main() {
-    println!("Hello, world!");
+fn misc() {
     sum(10,12);
 
     let xs: [i32; 5] = [1, 2, 3, 4, 5];
@@ -129,5 +132,20 @@ fn main() {
     sheep.talk();
     // dir_example();
     count_walk_dir(".");
+
+    // words count
+    println!("Total lines are: {}",  count_words::count_lines());
+
+    // reduce
+/*    let l: Iter<i32> = [1, 2, 3, 4].iter();
+    let s: Option<&i32> = l.reduce(|a, b | a + b );
+    s.map_or((), |ss| println!("{}", ss))*/
+}
+
+fn main() {
+    println!("Hello, world!");
+    // data_science::test_array();
+    // data_science::test_ndarray_rand();
+    data_science::test_visualize();
 }
 
